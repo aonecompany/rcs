@@ -765,6 +765,22 @@ footer{
     text-decoration: none;
 }
 
+.footer-wrapper > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: var(--gap-s);
+}
+
+.footer-wrapper > div > a > img{
+    width: 24px;
+    opacity: 0.6;
+}
+
+.footer-wrapper > div > a:nth-of-type(1){
+    margin-right: 8px;
+}
+
 @media screen and (max-width: 1320px) {
     
     #facility > .section-wrapper > .facility-title-wrapper {
