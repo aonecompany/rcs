@@ -140,11 +140,17 @@ header{
 }
 
 .header-wrapper > img{
-    height: 56px;
+    height: 52px;
     cursor: pointer;
 }
 
-.header-wrapper > a{
+.header-wrapper > div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-wrapper > div > a:nth-of-type(1){
     font-family: 'Pretendard Variable', sans-serif;
     font-size: 14px;
     font-weight: 800;
@@ -154,11 +160,26 @@ header{
     border: 1px solid var(--color-highlight);
     border-radius: 40px;
     transition: 0.2s;
+    margin-right: 8px;
 }
 
-.header-wrapper > a:hover{
+.header-wrapper > div > a:nth-of-type(1):hover{
     color: var(--color-white);
     background-color: var(--color-highlight);
+}
+
+.header-wrapper > div > a:nth-of-type(2){
+    transition: 0.2s;
+}
+
+.header-wrapper > div > a:nth-of-type(2) > img{
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.header-wrapper > div > a:nth-of-type(2):hover{
+    opacity: 0.8;
 }
 
 /* ---------------- 배너 영역 ---------------- */
@@ -781,6 +802,38 @@ footer{
     margin-right: 8px;
 }
 
+.up-img{
+    position: fixed;
+    bottom: var(--gap-l);
+    right: var(--gap-s);
+    width: var(--gap-l);
+    height: var(--gap-l);
+    object-fit: contain;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    animation-name: move-updown;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: 0.2s;
+    z-index: 100;
+}
+
+.up-img:hover{
+    opacity: 0.8;
+}
+
+@keyframes move-updown{
+    from{
+        bottom: var(--gap-l);
+    }
+
+    to{
+        bottom: var(--gap-xl);
+    }
+}
+
 @media screen and (max-width: 1320px) {
     
     #facility > .section-wrapper > .facility-title-wrapper {
@@ -899,8 +952,13 @@ footer{
     .section-desc > br:not(.not-hidden){
         display: none;
     }
+    
+    .header-wrapper > div > a:nth-of-type(1){
+        padding: 12px 14px;
+        margin-right: 4px;
+    }
 
-    .header-wrapper > a > span{
+    .header-wrapper > div > a:nth-of-type(1) > span{
         display: none;
     }
 
